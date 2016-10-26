@@ -1,6 +1,6 @@
 $('body').append('<div></div>');
 
-function updateClock () {
+function changeClock () {
 
  	var currentTime = new Date ();
   	var currentHours = currentTime.getHours ();
@@ -15,16 +15,16 @@ function updateClock () {
 
   	currentHours = (currentHours == 0) ? 12 : currentHours; 
 
-  	var currentTimeString = '#' + currentHours + currentMinutes + currentSeconds;
+  	var currentTimeStr = '#' + currentHours + currentMinutes + currentSeconds;
   	
   	if (currentSeconds % 2 === 0) {
-  		$('body').css('background-color', currentTimeString)
+  		$('body').css('background-color', currentTimeStr)
   	};
   	
-   	$('div').html(currentTimeString);
+   	$('div').html(currentTimeStr);
    	  	
 }
 
 $(document).ready(function () {
-   setInterval('updateClock()', 1000);
+   setInterval('changeClock()', 1000);
 });
